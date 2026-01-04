@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple SPA</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">MyBrand</div>
+      <ul class="nav-links">
+        <li><button onclick="showSection('home')">Home</button></li>
+        <li><button onclick="showSection('about')">About</button></li>
+        <li><button onclick="showSection('services')">Services</button></li>
+        <li><button onclick="showSection('contact')">Contact</button></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <section id="home" class="content-section active">
+        <h1>Welcome Home</h1>
+        <p>Yeh aapka home page ka content hai.</p>
+        <button class="cta-btn" onclick="showSection('services')">
+          Explore Services
+        </button>
+      </section>
+
+      <section id="about" class="content-section">
+        <h1>About Us</h1>
+        <p>Hum behtreen web solutions provide karte hain.</p>
+      </section>
+
+      <section id="services" class="content-section">
+        <h1>Our Services</h1>
+        <p>Web Development, UI/UX Design, and SEO.</p>
+      </section>
+
+      <section id="contact" class="content-section">
+        <h1>Contact Me</h1>
+        <p>Email: hello@example.com</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Horizontal scroll prevent karne ke liye */
+  background: #f3f4f6;
+}
+
+/* --- Responsive Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2937;
+  color: white;
+  padding: 0 5%;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+.nav-links li button:hover {
+  color: #3b82f6;
+}
+
+/* --- Main Container --- */
+.container {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.content-section {
+  display: none;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.content-section.active {
+  display: block;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.content-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* --- Media Queries (Mobile Responsive) --- */
+
+/* Tablets aur Mobile ke liye */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+
+  .nav-links {
+    margin-top: 15px;
+    gap: 10px;
+    flex-wrap: wrap; /* Buttons agar zyada hon toh niche shift ho jayein */
+    justify-content: center;
+  }
+
+  .content-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Chotay Mobile Screens ke liye */
+@media (max-width: 480px) {
+  .nav-links li button {
+    font-size: 0.9rem;
+    padding: 5px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Explore Services Button Styling */
+.cta-btn {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #3b82f6 0%,
+    #2563eb 100%
+  ); /* Blue gradient */
+  border: none;
+  border-radius: 50px; /* Pill shape */
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  transform: translateY(-3px); /* Thora sa upar uthay ga */
+}
+
+.cta-btn:active {
+  transform: translateY(-1px); /* Click karne par halka sa niche */
+}
+
+/* Mobile par button ko adjust karne ke liye */
+@media (max-width: 480px) {
+  .cta-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 80%; /* Mobile par thora bara dikhay */
+  }
+}
